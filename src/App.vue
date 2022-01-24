@@ -1,13 +1,13 @@
 <template>
-  <div>Country API</div>
+  <div>
+    <span class="material-icons">account_circle</span>
+  </div>
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  components: {
-  }
 }
 </script>
 
