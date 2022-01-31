@@ -2,9 +2,11 @@
   <main class="flex flex-col">
     <div class="flex justify-between px-10 py-6 items-center">
       <InputComponent />
-      <SelectComponent />
+      <SelectComponent
+        :selected="filter"
+        @update:selected="onChange"
+      />
     </div>
-    <router-view />
   </main>
 </template>
 
@@ -14,8 +16,18 @@
 
 export default {
     name:'TheMain',
-    components:{InputComponent, SelectComponent}
-}
+    components:{InputComponent, SelectComponent},
+    data(){
+      return{
+        filter:''
+      }
+    },
+    methods:{
+      onChange(value){
+        this.filter = value
+      }
+    }
+  }
 </script>
 
 <style>
